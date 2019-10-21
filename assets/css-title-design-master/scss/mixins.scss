@@ -1,0 +1,100 @@
+
+@mixin x_transform($val){
+	transform: $val;
+	-o-transform: $val;
+	-ms-transform: $val;
+	-moz-transform: $val;
+	-webkit-transform: $val;
+}
+@mixin circle_color($cl_name){
+	&.title-#{$cl_name}{
+		&.all{
+			color: var(--$cl_name);
+		}
+		&:before{
+			border: 1.5px solid var(--$cl_name) !important;
+		}
+	}
+}
+
+@mixin border_bottom_color($cl_name){
+	&.title-#{$cl_name}{
+		&.all{
+			color: var(--$cl_name);
+		}
+		&:before{
+			border-bottom: 2px solid var(--$cl_name);
+		}
+	}
+}
+
+@mixin border_bottom_color_2($cl_name){
+	&.title-#{$cl_name}{
+		&.all{
+			color: var(--$cl_name);
+		}
+		&:before{
+		  border-image: 
+		    linear-gradient(
+		      to right,
+		      var(--$cl_name), 
+		      rgba(0, 0, 0, 0),
+		    ) 0 0 100% 0;
+		}
+	}
+}
+
+@mixin fill_color($cl_name){
+	&.title-#{$cl_name}{
+		background-color: var(--$cl_name);
+	}
+}
+
+@mixin fill_color_2($cl_name){
+	&.title-#{$cl_name}{
+		background-color: var(--$cl_name);
+		&:before{
+			background-color: var(--$cl_name);
+		}
+		&:after{
+			background-color: var(--$cl_name);
+		}
+	}
+}
+
+@mixin fill_color_3($cl_name){
+	&.title-#{$cl_name}{
+		background-color: var(--$cl_name);
+		&:before{
+			border-color: transparent transparent transparent var(--$cl_name);
+		}
+		&.with-border-1{
+			&:after{
+				border-color: transparent transparent var(--$cl_name) transparent;
+			}
+		}
+		&.with-border-2{
+			&:after{
+				border-color: transparent transparent var(--$cl_name) var(--$cl_name);
+			}
+		}
+		&.with-border-3{
+			&:after{
+				border-color: transparent transparent var(--$cl_name) var(--$cl_name);
+			}
+		}
+	}
+}
+@mixin fill_color_4($cl_name){
+	&.title-#{$cl_name}{
+		background-color: var(--$cl_name);
+		&:before{
+			border-color: transparent transparent transparent var(--$cl_name);
+		}
+		&.with-border{
+			&:after{
+				border-color: transparent transparent var(--$cl_name) transparent;
+			}
+		}
+	}
+}

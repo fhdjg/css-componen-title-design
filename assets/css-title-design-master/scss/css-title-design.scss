@@ -1,0 +1,296 @@
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --black: #000;
+}
+
+@import "mixins";
+
+.itm-title{
+	font-size: 19px !important;
+}
+
+.title-circle-1, .title-square-1{
+	@include circle_color(primary);
+	@include circle_color(info);
+	@include circle_color(danger);
+	@include circle_color(warning);
+	@include circle_color(success);
+	@include circle_color(light);
+	@include circle_color(white);
+	@include circle_color(dark);
+	@include circle_color(secondary);
+	&:before{
+		content: '';
+		margin-right: .8rem;
+		height: 14px;
+		width: 14px;
+		display: inline-block;
+		border-radius: 100%;
+		border: 1.5px solid #000;
+	}
+}
+.title-square-1{
+	&:before{
+		content: '';
+		margin-right: .8rem;
+		height: 14px;
+		width: 14px;
+		display: inline-block;
+		border-radius: unset;
+		border: 1.5px solid #000;
+	}
+}
+
+.title-border-bottom-1{
+	position: relative;
+	@include border_bottom_color(primary);
+	@include border_bottom_color(info);
+	@include border_bottom_color(danger);
+	@include border_bottom_color(warning);
+	@include border_bottom_color(success);
+	@include border_bottom_color(light);
+	@include border_bottom_color(white);
+	@include border_bottom_color(dark);
+	@include border_bottom_color(secondary);
+	&:before{
+		content: '';
+		position: absolute;
+		bottom: 0;
+		z-index: 1;
+		width: 80px;
+	  height: 100px;
+		border-bottom: 2px solid #000;
+		padding-bottom: 1.25rem;
+	}
+	&:after{
+		content: '';
+		position: relative;
+		display: block;		
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		padding-bottom: 1.25rem;
+	}
+}
+
+
+.title-border-bottom-2{
+	position: relative;
+	@include border_bottom_color_2(primary);
+	@include border_bottom_color_2(info);
+	@include border_bottom_color_2(danger);
+	@include border_bottom_color_2(warning);
+	@include border_bottom_color_2(success);
+	@include border_bottom_color_2(light);
+	@include border_bottom_color_2(white);
+	@include border_bottom_color_2(dark);
+	@include border_bottom_color_2(secondary);
+	&:before{
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: -2px;
+		z-index: 1;
+		width: 50%;
+	  border-width: 2px;
+	  border-style: solid;
+	  border-image: 
+	    linear-gradient(
+	      to right,
+	      #000, 
+	      rgba(0, 0, 0, 0),
+	    ) 0 0 100% 0;
+		padding-bottom: 1.25rem;
+	}
+	&:after{
+		content: '';
+		position: relative;
+		display: block;
+		border-bottom: 2px solid rgba(0,0,0,0.05);
+		padding-bottom: 1.25rem;
+	}
+}
+
+
+.title-fill-color-1{
+	display: inline-block;
+	background-color: #000;
+	padding-left: 1.25rem;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	padding-right: 2rem;
+	color: #fff;
+	margin: 0;
+	&.with-border{	
+		border-right: 7px solid rgba(0,0,0,0.2);
+	}
+	border-radius: 0px 100px 0px 0px;
+	@include fill_color(primary);
+	@include fill_color(info);
+	@include fill_color(danger);
+	@include fill_color(warning);
+	@include fill_color(success);
+	@include fill_color(light);
+	@include fill_color(white);
+	@include fill_color(dark);
+	@include fill_color(secondary);
+}
+
+.title-fill-color-2{
+	display: inline-block;
+	background-color: #000;
+	padding-left: 1.25rem;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	padding-right: 2rem;
+	color: #fff;
+	margin: 0;
+	position: relative;
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: -13px;
+		height: 100%;
+		padding: .75rem 5px;
+		display: block;
+		background-color: #000;
+	}
+	&:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: calc(-13px + -8px);
+		height: 100%;
+		padding: .75rem 2.5px;
+		background-color: #000;
+	}
+	@include fill_color_2(primary);
+	@include fill_color_2(info);
+	@include fill_color_2(danger);
+	@include fill_color_2(warning);
+	@include fill_color_2(success);
+	@include fill_color_2(light);
+	@include fill_color_2(white);
+	@include fill_color_2(dark);
+	@include fill_color_2(secondary);
+}
+
+.title-fill-color-3{
+	display: inline-block;
+	background-color: #000;
+	padding-left: 1.25rem;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	padding-right: 1.25rem;
+	color: #fff;
+	margin: 0;
+	position: relative;
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: -2rem;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 2.9rem 0 0 2rem;
+		border-color: transparent transparent transparent #000;
+	}
+	&.with-border-1, &.with-border-2, &.with-border-3{
+		&:after{
+			content: '';
+			position: absolute;
+			top: 0;
+			width: 0;
+			height: 0;
+			border-style: solid;
+		}
+	}
+	&.with-border-1{
+		&:after{
+			right: -1.7rem;
+			border-width: 0 0 2.9rem .7rem;
+			@include x_transform(skew(45deg));
+			border-color: transparent transparent #000 transparent;
+		}
+	}
+
+	&.with-border-2{
+		&:after{
+			right: -1.7rem;
+			border-width: 0 0 1.5rem .7rem;
+			@include x_transform(skew(35deg));
+			border-color: transparent transparent #000 transparent;
+		}
+	}
+
+	&.with-border-3{
+		&:after{
+			right: -2.1rem;
+			border-width: 0 0 2.9rem .7rem;
+			@include x_transform(skew(35deg));
+			border-color: transparent transparent #000 transparent;
+		}
+	}
+	@include fill_color_3(primary);
+	@include fill_color_3(info);
+	@include fill_color_3(danger);
+	@include fill_color_3(warning);
+	@include fill_color_3(success);
+	@include fill_color_3(light);
+	@include fill_color_3(white);
+	@include fill_color_3(dark);
+	@include fill_color_3(black);
+	@include fill_color_3(secondary);
+}
+
+.title-fill-color-4{
+	display: inline-block;
+	background-color: #000;
+	padding-left: 1.25rem;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	padding-right: 1.25rem;
+	color: #fff;
+	margin: 0;
+	position: relative;
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: -1.5rem;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 1.5rem 0 1.4rem 1.5rem;
+		border-color: transparent transparent transparent #000;
+	}
+	@include fill_color_4(primary);
+	@include fill_color_4(info);
+	@include fill_color_4(danger);
+	@include fill_color_4(warning);
+	@include fill_color_4(success);
+	@include fill_color_4(light);
+	@include fill_color_4(white);
+	@include fill_color_4(dark);
+	@include fill_color_4(secondary);
+}
